@@ -22,10 +22,6 @@ fun Home(nav: NavHostController) {
         }) {
             Text(text = "Set Information")
         }
-        Button(onClick = {
-            nav.navigate("GetAllData")
-        }) {
-            Text(text = "Get Information")
-        }
+
     }
 }

@@ -19,7 +19,7 @@ fun GetData(profileViewModel: ProfileViewModel, nav: NavHostController) {
 
         Button(onClick = {
             nav.navigate("ListOfData")
-            profileViewModel.getData()
+            profileViewModel.fatchData()
 
         }) {
             Text(text = "Get All Data")
