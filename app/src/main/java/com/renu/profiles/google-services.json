@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "899292634493",
+    "project_id": "profiles-62f20",
+    "storage_bucket": "profiles-62f20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899292634493:android:5ffffade54ad9735c88014",
+        "android_client_info": {
+          "package_name": "com.renu.profiles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYbOWR9cLcEBnTPtYuR38NSSeYlZtpIhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
