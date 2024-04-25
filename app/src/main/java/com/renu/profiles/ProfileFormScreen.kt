@@ -17,8 +17,6 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
-    LazyColumn(modifier = Modifier.verticalScroll(rememberScrollState())) {
-        item {
 
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -54,7 +52,7 @@ fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
                 )
 
                 Button(onClick = {
-                    nav.navigate("ProfileInfo")
+                    nav.navigate("Start")
 
                     profileViewModel.profileData.value = profileViewModel.profileData.value.copy(
                         firstName = profileViewModel.firstName.value,
@@ -70,7 +68,7 @@ fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
                     Text(text = "Save")
                 }
             }
-        }
-    }
+
+
 }
 
