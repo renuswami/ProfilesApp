@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                         composable("ProfileInfo"){
                             ProfileInfo(profileViewModel = profileViewModel, nav = nav)
                         }
-
+// test
                     }
                 }
             }
