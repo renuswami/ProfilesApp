@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
                         }) {
                             Text(text = "Profile Info", fontSize = 18.sp)
                         }
+
                     }
                 }
             }
