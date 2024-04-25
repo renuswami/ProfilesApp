@@ -44,3 +44,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun Name() {
+    Text(text = "renu")
+}
