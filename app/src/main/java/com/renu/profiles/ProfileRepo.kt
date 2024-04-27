@@ -11,16 +11,14 @@ class ProfileRepo {
     fun setData(profileData: ProfileData){
 
         db.collection("Profile")
-            .document("String")
+            .document(profileData.mobile)
             .set(profileData)
     }
 
     suspend fun getData(): ProfileData?{
 
-
-
         return db.collection("Profile")
-            .document("String")
+            .document("mobile")
             .get()
             .await()
             .toObject(ProfileData::class.java)

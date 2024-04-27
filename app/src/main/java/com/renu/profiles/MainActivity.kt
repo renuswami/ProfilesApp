@@ -31,7 +31,11 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController = nav, startDestination = "Start"){
                         composable("Start"){
-                            ProfileForm(profileViewModel =profileViewModel, nav =nav)
+                            Home(profileViewModel = profileViewModel, nav = nav)
+                        }
+                        composable("profileForm"){
+                            ProfileForm(profileViewModel = profileViewModel, nav = nav)
+
                         }
                         composable("ProfileInfo"){
                             ProfileInfo(profileViewModel = profileViewModel, nav = nav)
