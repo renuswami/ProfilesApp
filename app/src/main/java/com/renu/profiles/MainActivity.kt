@@ -29,26 +29,20 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val nav = rememberNavController()
 
-                    NavHost(navController = nav, startDestination = "Start"){
-                        composable("Start"){
-                            Home(profileViewModel = profileViewModel, nav = nav)
+                    NavHost(navController = nav, startDestination = "Start") {
+                        composable("Start") {
+                            Home(nav = nav)
                         }
-                        composable("profileForm"){
+                        composable("profileForm") {
                             ProfileForm(profileViewModel = profileViewModel, nav = nav)
 
                         }
-                        composable("ProfileInfo"){
+                        composable("ProfileInfo") {
                             ProfileInfo(profileViewModel = profileViewModel, nav = nav)
                         }
-
                     }
                 }
             }
         }
     }
-}
-
-@Composable
-fun Name() {
-    Text(text = "renu")
 }

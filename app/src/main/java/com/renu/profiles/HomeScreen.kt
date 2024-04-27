@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.navigation.NavHostController
 
 @Composable
-fun Home(profileViewModel: ProfileViewModel, nav: NavHostController) {
+fun Home(nav: NavHostController) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -23,6 +23,4 @@ fun Home(profileViewModel: ProfileViewModel, nav: NavHostController) {
             Text(text = "Get Info")
         }
     }
-
-
 }

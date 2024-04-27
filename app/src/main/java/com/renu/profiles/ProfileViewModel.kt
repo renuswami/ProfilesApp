@@ -1,7 +1,9 @@
 package com.renu.profiles
 
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -9,6 +11,8 @@ import kotlinx.coroutines.launch
 class ProfileViewModel: ViewModel() {
 
     val profileData = mutableStateOf(ProfileData())
+    private var profile = mutableStateListOf(ProfileData())
+
     private val profileRepo = ProfileRepo()
 
 
@@ -22,9 +26,10 @@ class ProfileViewModel: ViewModel() {
         profileRepo.setData(profileData.value)
     }
 
-    fun getData(){
+    fun getData() {
         viewModelScope.launch {
-            profileData.value = profileRepo.getData()!!
+            profile = profileRepo.getData() as SnapshotStateList<ProfileData>
         }
     }
+
 }
