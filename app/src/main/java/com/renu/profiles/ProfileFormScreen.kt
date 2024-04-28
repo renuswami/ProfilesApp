@@ -22,12 +22,10 @@ import androidx.navigation.NavHostController
 @Composable
 fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
 
-    val scrollState = rememberScrollState()
 
         Column(
 
-            modifier = Modifier.fillMaxSize()
-                .horizontalScroll(scrollState),
+            modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

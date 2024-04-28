@@ -37,7 +37,15 @@ class MainActivity : ComponentActivity() {
                             ProfileForm(profileViewModel = profileViewModel, nav = nav)
 
                         }
-                        composable("ProfileInfo") {
+                        composable("GetAllData") {
+                            GetData(profileViewModel = profileViewModel, nav = nav)
+                        }
+
+                        composable("GetDataByMobile"){
+                            GetDataByMobile(profileViewModel = profileViewModel, nav = nav)
+                        }
+
+                        composable("ListOfData"){
                             ProfileInfo(profileViewModel = profileViewModel, nav = nav)
                         }
                     }

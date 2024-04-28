@@ -1,5 +1,6 @@
 package com.renu.profiles
 
+import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.DocumentSnapshot
@@ -21,8 +22,23 @@ class ProfileRepo {
 
         return db.collection("Profile")
             .get()
+            .addOnSuccessListener {
+                Log.e("GET", it.documents.toString())
+            }
             .await()
             .toObjects(ProfileData::class.java)
     }
 
+    suspend fun getDataByMobile(mobile: String): MutableList<ProfileData> {
+
+        return db.collection("Profile")
+            .limit(1)
+            .whereEqualTo("mobile", mobile)
+            .get()
+            .addOnSuccessListener {
+                Log.e("GETDATABYMOBILE", it.documents.toString())
+            }
+            .await()
+            .toObjects(ProfileData::class.java)
+    }
 }

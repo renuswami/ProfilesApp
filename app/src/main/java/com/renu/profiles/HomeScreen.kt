@@ -16,11 +16,15 @@ fun Home(nav: NavHostController) {
         verticalArrangement = Arrangement.Center
     ) {
 
-        Button(onClick = {nav.navigate("profileForm") }) {
-            Text(text = "Set Info")
+        Button(onClick = {
+            nav.navigate("profileForm")
+        }) {
+            Text(text = "Set Information")
         }
-        Button(onClick = {nav.navigate("profileInfo") }) {
-            Text(text = "Get Info")
+        Button(onClick = {
+            nav.navigate("GetAllData")
+        }) {
+            Text(text = "Get Information")
         }
     }
 }
