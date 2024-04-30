@@ -21,13 +21,19 @@ import com.renu.profiles.viewmodels.ProfileViewModel
 @Composable
 fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
 
-        Column(
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        ProfileTopAppBar(nav = nav)
 
+    }
+        Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             TextField(
                 value = profileViewModel.firstName.value,
                 onValueChange = { profileViewModel.firstName.value = it },

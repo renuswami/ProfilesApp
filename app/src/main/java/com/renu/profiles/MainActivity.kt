@@ -1,6 +1,5 @@
 package com.renu.profiles
 
-import ProfileTopAppBar
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,11 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.renu.profiles.profiledata.ProfileData
 import com.renu.profiles.profilescreens.GetData
 import com.renu.profiles.profilescreens.GetDataByMobile
 import com.renu.profiles.profilescreens.Home
 import com.renu.profiles.profilescreens.ProfileForm
-import com.renu.profiles.profilescreens.ProfileInfo
+import com.renu.profiles.profilescreens.UserProfiles
 import com.renu.profiles.ui.theme.ProfilesTheme
 import com.renu.profiles.viewmodels.DataByMobileViewModel
 import com.renu.profiles.viewmodels.ProfileViewModel
@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val profileViewModel = ProfileViewModel()
             val dataByMobileViewModel = DataByMobileViewModel()
+
             ProfilesTheme {
 
                 // A surface container using the 'background' color from the theme
@@ -36,24 +37,20 @@ class MainActivity : ComponentActivity() {
 
                     val nav = rememberNavController()
 
-                    NavHost(navController = nav, startDestination = "Start") {
-                        composable("Start") {
-                            Home(nav = nav)
-                        }
+                    NavHost(navController = nav, startDestination = "profileForm") {
                         composable("profileForm") {
                             ProfileForm(profileViewModel = profileViewModel, nav = nav)
-
                         }
-                        composable("GetAllData") {
+                        /*composable("GetAllData") {
                             GetData(profileViewModel = profileViewModel, nav = nav)
                         }
+                        */
 
                         composable("GetDataByMobile"){
                             GetDataByMobile(dataByMobileViewModel = dataByMobileViewModel, nav = nav)
                         }
-
                         composable("ListOfData"){
-                            ProfileInfo(profileViewModel = profileViewModel)
+                            UserProfiles(profileViewModel = profileViewModel, nav = nav)
                         }
                     }
                 }
