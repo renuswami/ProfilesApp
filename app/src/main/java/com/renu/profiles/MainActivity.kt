@@ -1,16 +1,16 @@
 package com.renu.profiles
 
+import ProfileTopAppBar
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.Start
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -22,6 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val profileViewModel = ProfileViewModel()
             ProfilesTheme {
+
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -47,6 +48,10 @@ class MainActivity : ComponentActivity() {
 
                         composable("ListOfData"){
                             ProfileInfo(profileViewModel = profileViewModel, nav = nav)
+                        }
+
+                        composable("ProfilesTopAppBar"){
+                            ProfileTopAppBar(nav = nav)
                         }
                     }
                 }
