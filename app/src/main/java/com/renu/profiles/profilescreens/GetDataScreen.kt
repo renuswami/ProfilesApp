@@ -1,4 +1,4 @@
-package com.renu.profiles
+package com.renu.profiles.profilescreens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,9 +7,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.navigation.NavHostController
+import com.renu.profiles.viewmodels.ProfileViewModel
 
 @Composable
-fun Home(nav: NavHostController) {
+fun GetData(profileViewModel: ProfileViewModel, nav: NavHostController) {
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -17,14 +18,16 @@ fun Home(nav: NavHostController) {
     ) {
 
         Button(onClick = {
-            nav.navigate("profileForm")
+            nav.navigate("ListOfData")
+            profileViewModel.getData()
+
         }) {
-            Text(text = "Set Information")
+            Text(text = "Get All Data")
         }
         Button(onClick = {
-            nav.navigate("GetAllData")
+            nav.navigate("GetDataByMobile")
         }) {
-            Text(text = "Get Information")
+            Text(text = "Get Data by Mobile")
         }
     }
 }

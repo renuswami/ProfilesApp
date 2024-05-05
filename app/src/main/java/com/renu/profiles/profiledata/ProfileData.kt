@@ -1,4 +1,4 @@
-package com.renu.profiles
+package com.renu.profiles.profiledata
 
 data class ProfileData(
     val firstName: String = "",

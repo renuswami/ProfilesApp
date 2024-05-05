@@ -1,12 +1,12 @@
-package com.renu.profiles
+package com.renu.profiles.viewmodels
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.renu.profiles.profiledata.ProfileData
+import com.renu.profiles.profileRepository.ProfileRepo
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
 
 class ProfileViewModel: ViewModel() {
 
@@ -32,11 +32,11 @@ class ProfileViewModel: ViewModel() {
         }
     }
 
-    fun getDataByMobile() {
+    /*fun getDataByMobile() {
 
         viewModelScope.launch {
             profile.value = profileRepo.getDataByMobile(profileData.value.mobile)
             Log.e("GETDATABYMOBILE", profile.value.toString())
         }
-    }
+    }*/
 }

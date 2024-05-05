@@ -1,11 +1,9 @@
-package com.renu.profiles
+package com.renu.profiles.profileRepository
 
 import android.util.Log
-import com.google.android.gms.tasks.Task
 import com.google.firebase.Firebase
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.firestore
-import com.google.firebase.firestore.toObject
+import com.renu.profiles.profiledata.ProfileData
 import kotlinx.coroutines.tasks.await
 
 class ProfileRepo {

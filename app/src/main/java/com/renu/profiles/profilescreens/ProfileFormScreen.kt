@@ -1,15 +1,12 @@
-package com.renu.profiles
+package com.renu.profiles.profilescreens
 
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.scrollable
-import androidx.compose.foundation.horizontalScroll
+import ProfileTopAppBar
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -17,11 +14,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.navigation.NavHostController
+import com.renu.profiles.viewmodels.ProfileViewModel
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileForm(profileViewModel: ProfileViewModel, nav: NavHostController) {
-
 
         Column(
 
